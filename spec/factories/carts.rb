@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :cart do
-    profile nil
-    product nil
+    profile { build(:profile)}
+    product { build(:product)}
   end
 end
