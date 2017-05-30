@@ -1,7 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+	margin-bottom: 50px;
+}
 .img-thumbnail {
   height: 400px;
   width: 300px;
+}
+
+.jumbotron .container {
+	display: flex;
+}
+
+.container{
+	align-items: center;
+	flex-direction: column;
+}
+
+.header-txt{
+	font-family: 'Montserrat Subrayada', sans-serif;
 }
