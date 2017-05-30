@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
 
   resources :carts, only: [:index, :destroy]
+  root to: 'pages#index'
+  resources :carts
   resources :profiles, only: [:new, :edit, :create, :update]
 
 end
