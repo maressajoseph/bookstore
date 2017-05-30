@@ -1,5 +1,17 @@
-<div class="container-fluid text-center">
-  <h1>All Products</h1>
+<div class="container-fluid">
+  <div class="container">
+  <nav class="pull-right">
+    <div class="row">
+      <div class="col-xs-1">
+        <p><%= @cart.count %></p>
+      </div>
+      <div class="col-xs-1">
+        <%= link_to image_tag("http://res.cloudinary.com/maressajoseph/image/upload/v1496153955/2772_lliscg.svg", class: "cart-item"), carts_path %>
+      </div>
+    </div>
+  </nav>
+</div>
+  <h1 class="text-center">All Products</h1>
 </div>
 <br><br>
 <div class="container">
@@ -21,9 +33,11 @@
         <%= image_tag product.image, :class => "img-thumbnail" %>
         <h3 class="text-center"><%= link_to product.title, product %></h3>
         <h4 class="text-center"><%= product.price %></h4>
-        <h4 class="text-center"><%= link_to "Add to cart", new_product_cart_path(product) %></h4>
+        <% if user_signed_in? %>
+          <h4 class="text-center"><%= link_to "Add to cart", new_product_cart_path(product) %></h4>
+        <% end %>
       </div>
-    <% end %>
+      <% end %>
     <br>
   </div>
 </div>
