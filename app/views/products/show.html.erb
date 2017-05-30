@@ -1,0 +1,18 @@
+<div class = "container-fluid"><br>
+  <h2 class="text-center"><%= @product.title %> - by <%= @product.author %></h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 text-right">
+      <%= image_tag @product.image, class: "img-thumbnail" %>
+    </div>
+    <div class="col-xs-6">
+      <h3>Book details</h3>
+      <h4>Title: <%= @product.title %></h4>
+      <h4>Author: <%= @product.author %></h4>
+      <h4>Price: €<%= @product.price %></h4>
+      <h4>Description: <%= @product.description %></h4>
+    </div>
+  </div>
+  <%= link_to "Back", products_path, class: "btn btn-default" %>
+</div>

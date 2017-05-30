@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources :carts, only: [:index, :destroy]
   root to: 'pages#index'
+
+  get "about" => 'pages#about'
+  get "contact" => 'pages#contact'
   resources :carts
   resources :profiles, only: [:new, :edit, :create, :update]
 

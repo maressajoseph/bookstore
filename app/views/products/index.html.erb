@@ -1,0 +1,28 @@
+<div class="container-fluid text-center">
+  <h1>All Products</h1>
+</div>
+<br><br>
+<div class="container">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      Sort by
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Sort A-Z", products_path(sort_by: "Sort A-Z") %></li>
+      <li><%= link_to "Sort Z-A", products_path(sort_by: "Sort Z-A") %></li>
+      <li><%= link_to "Price low-high", products_path(sort_by: "Price low-high") %></li>
+      <li><%= link_to "Price high-low", products_path(sort_by: "Price high-low") %></li>
+    </ul>
+  </div>
+  <br><br>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-4">
+        <%= image_tag product.image, :class => "img-thumbnail" %>
+        <h3 class="text-center"><%= link_to product.title, product %></h3>
+        <h4 class="text-center"><%= product.price %></h4>
+      </div>
+    <% end %>
+    <br>
+  </div>
+</div>

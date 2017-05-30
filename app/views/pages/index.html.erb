@@ -5,5 +5,16 @@
   </div>
 </div>
 <div class="container">
-
+  <%= link_to "See all products", products_path, class: "btn btn-default text-center" %>
+  <div class="row">
+    <div class="col-xs-4">
+      <%= image_tag @product1.image, class: "img-thumbnail" %>
+    </div>
+    <div class="col-xs-4">
+      <%= image_tag @product2.image, class: "img-thumbnail" %>
+    </div>
+    <div class="col-xs-4">
+      <%= image_tag @product3.image, class: "img-thumbnail" %>
+    </div>
+  </div>
 </div>
