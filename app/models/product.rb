@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
 
-  has_many :profiles, dependent: :destroy
+  has_many :carts, dependent: :destroy
+
+  has_many :customers, through: :carts, source: :profile
 end

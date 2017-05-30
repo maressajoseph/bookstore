@@ -1,6 +1,9 @@
 class Profile < ApplicationRecord
   belongs_to :user
-  has_many :products, dependent: :destroy
+  has_many :carts, dependent: :destroy
+
+  has_many :cart_products, through: :carts, source: :product
+
   validates :first_name, :last_name, :street, :zipcode, :city, presence: true
 
   def full_name
