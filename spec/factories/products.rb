@@ -4,6 +4,6 @@ FactoryGirl.define do
     author { Faker::Book.author }
     description {Faker::Lorem.paragraph }
     price { Faker::Number.decimal(2) }
-    image { Faker::LoremPixel.image("50x60") }
+    image { Faker::Lorem.word }
   end
 end
