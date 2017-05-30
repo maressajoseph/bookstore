@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
 
+
   def index
     @products = Product.all.order_by(params[:sort_by])
+    @cart = current_user.profile.cart_products
   end
 
   def show
@@ -12,4 +14,7 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
+
+
+
 end
