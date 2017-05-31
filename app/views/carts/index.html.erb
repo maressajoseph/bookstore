@@ -5,8 +5,25 @@
     </div>
     <div class='panel-body'>
       <% if @cart.any? %>
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-3 ">
+            <p>product</p>
+          </div>
+          <div class="col-md-1">
+            <p>price</p>
+          </div>
+          <div class="col-md-2">
+            <p>quantity</p>
+          </div>
+          <div class="col-md-1">
+            <p>sum</p>
+          </div>
+        </div>
         <ol>
           <% @cart.each do |product| %>
+            <% @sum =+ product.price %>
                 <div class="row">
                   <li>
                   <div class="col-md-1">
@@ -14,19 +31,25 @@
                       <%= image_tag(product.image) %>
                     </a>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     <%= product.title %>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-1">
                     <%= product.price %>
                   </div>
                   <div class="col-md-2">
+                    quantity
+                  </div>
+                  <div class="col-md-1">
+                  </div>
+                  <div class="col-md-1">
                     <%= link_to "", cart_path(product), method: :delete, data: {confirm: "Are you sure?"}, class:"glyphicon glyphicon-remove" %>
                   </div>
                 </li>
               </div>
           <% end %>
         </ol>
+        <p>Total sum: <%= @sum %></p>
       <% else %>
         <p>Your cart is still empty</p>
       <% end %>
