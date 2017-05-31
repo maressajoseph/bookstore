@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>BookStore</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Playfair+Display" rel="stylesheet">
+		
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -26,5 +28,11 @@
     <% end %>
 
     <%= yield %>
+    <footer class="container">
+      <hr>
+      <p>Made by us</p>
+      <br><br>
+    </footer>
+
   </body>
 </html>
