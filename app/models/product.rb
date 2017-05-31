@@ -17,4 +17,8 @@ class Product < ApplicationRecord
       order(created_at: :asc)
     end
   end
+
+  def self.search(search)
+    where("description ILIKE ?", "%#{search}%")
+  end
 end
