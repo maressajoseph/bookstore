@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   get "about" => 'pages#about'
   get "contact" => 'pages#contact'
-  resources :carts
   resources :profiles, only: [:new, :edit, :create, :update]
 
 end
