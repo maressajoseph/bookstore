@@ -1,27 +1,26 @@
 <% @sum = 0 %>
-<div class="container">
+<% @quantity = 0  %>
+<div class="container"><br>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4>Your Cart</h4>
     </div>
     <div class='panel-body'>
+      <ol>
       <% if @cart.any? %>
         <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-3 ">
-            <p>product</p>
-          </div>
           <div class="col-md-1">
-            <p>price</p>
+          </div>
+          <div class="col-md-3">
+            <h4>Product</h4>
           </div>
           <div class="col-md-2">
-            <p>quantity</p>
+            <h4>Price</h4>
           </div>
-          <div class="col-md-1">
-            <p>sum</p>
+          <div class="col-md-2">
+            <h4>Quantity</h4>
           </div>
-        </div>
+        </div><hr></ol>
         <ol>
           <% @cart.each do |product| %>
             <% @sum += product.price %>
@@ -32,16 +31,14 @@
                       <%= image_tag(product.image) %>
                     </a>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <%= product.title %>
                   </div>
-                  <div class="col-md-1">
-                    <%= product.price %>
+                  <div class="col-md-2">
+                    € <%= product.price %>
                   </div>
                   <div class="col-md-2">
-                    quantity
-                  </div>
-                  <div class="col-md-1">
+                    1
                   </div>
                   <div class="col-md-1">
                     <%= link_to "", cart_path(product), method: :delete, data: {confirm: "Are you sure?"}, class:"glyphicon glyphicon-remove" %>
@@ -50,7 +47,8 @@
               </div>
           <% end %>
         </ol>
-        <p>Total sum: <%= @sum %></p>
+        <hr>
+        <p class="col-xs-2">Total price: €<%= @sum %></p>
       <% else %>
         <p>Your cart is still empty</p>
       <% end %>
