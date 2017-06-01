@@ -13,7 +13,7 @@
   <% end %>
   </nav>
 </div>
-  <h1 class="text-center">All Products</h1>
+  <h1 class="text-center">All Books</h1>
 </div>
 <br><br>
 <div class="container">
@@ -34,7 +34,7 @@
     </div>
     <div class="col-xs-4">
       <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Products", style: ("width:270px") %>
       <%= submit_tag "Search" %>
       <% end %>
     </div>

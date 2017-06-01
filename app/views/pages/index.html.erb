@@ -1,13 +1,15 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="header-txt">Sassy bookstore</h1>
-    <p>A Codaisseur shop-project</p>
+<div class="text-center">
+  <div clas="container">
+    <h1 class="header-txt">The Sassy Bookstore</h1>
+    <p>Welcome to The Sassy Bookstore - shop all your sassy books here!</p>
+    <%= link_to "See all books", products_path, class: "btn btn-default main-btn" %>
   </div>
 </div>
-
-<div class="container main-container">
-  <%= link_to "See all products", products_path, class: "btn btn-default text-center main-btn" %>
+<br><hr>
+<div class="container text-center">
   <br><br>
+  <p id="latestbooks">Latest books</p>
+  <br>
   <div class="row">
     <div class="col-xs-4">
       <%= image_tag @product1.image, class: "img-thumbnail" %>
