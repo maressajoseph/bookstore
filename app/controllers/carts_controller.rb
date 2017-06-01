@@ -5,7 +5,7 @@ before_action :authenticate_user!
     set_product_id2
     @cart = Cart.new(product: @product, profile: current_user.profile)
     @cart.save
-    redirect_to carts_path, notice: "Product added to your cart successuflly"
+    redirect_to products_path, notice: "Product added to your cart successuflly"
   end
 
   def destroy
@@ -19,7 +19,7 @@ before_action :authenticate_user!
     @cart = current_user.profile.cart_products
   end
 
-  
+
   private
 
   def set_product_id

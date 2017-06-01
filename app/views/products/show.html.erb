@@ -1,16 +1,4 @@
 <div class = "container-fluid"><br>
-  <nav class="pull-right">
-  <% if user_signed_in? %>
-    <div class="row little-shopping-cart">
-      <div class="col-xs-1">
-        <p><%= current_user.profile.cart_products.count %></p>
-      </div>
-      <div class="col-xs-1">
-        <%= link_to image_tag("http://res.cloudinary.com/maressajoseph/image/upload/v1496153955/2772_lliscg.svg", class: "cart-item"), carts_path %>
-      </div>
-    </div>
-  <% end %>
-</nav><br>
   <h2 class="text-center"><%= @product.title %> - by <%= @product.author %></h2>
 </div>
 <br><br><br>
@@ -27,7 +15,7 @@
       <h5>Price: €<%= @product.price %></h5>
       <h5>Description: <%= @product.description %></h5>
       <br>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user.has_profile? %>
         <h5><%= link_to "", new_product_cart_path(@product.id), class:"glyphicon glyphicon-shopping-cart"%> Add this book to your shopping cart </h5>
       <% end %>
     </div>
