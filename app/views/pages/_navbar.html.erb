@@ -17,57 +17,11 @@
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Contact", contact_path %></li>
         <% if !user_signed_in? %>
-          <li><%= link_to "Log In", new_user_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <%= render 'pages/guest' %>
+        <% elsif user_signed_in? && current_user.has_profile? %>
+          <%= render 'pages/profile' %>
         <% else %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.has_profile? ? current_user.full_name : current_user.email  %> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li role="separator" class="divider"></li>
-              <% if current_user.has_profile? %>
-                <li><%= link_to "Edit Profile", edit_profile_path(current_user.profile) %></li>
-              <% else %>
-                <li><%= link_to "Create Profile", new_profile_path %></li>
-              <% end %>
-              <li><%= link_to "Edit Password", edit_user_registration_path %></li>
-              <li role="separator" class="divider"></li>
-              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-            </ul>
-          </li>
-          <% end %>
-          <% if user_signed_in? && current_user.has_profile? %>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-gift bigicon">
-                </span> (<%= current_user.profile.cart_products.count %>)
-                <span class="glyphicon glyphicon-shopping-cart"></span>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu dropdown-cart" role="menu">
-                <% current_user.profile.cart_products.each do |product| %>
-                  <% @sum += product.price %>
-                  <li>
-                    <span class="item">
-                      <span class="item-left">
-                        <%= image_tag(product.image) %>
-                        <span class="item-info">
-                          <h5><%= product.title %></h5>
-                          <h6>price: <%= product.price %></h6>
-                        </span>
-                      </span>
-                      <span class="item-right">
-                        <%= link_to "", cart_path(product), method: :delete, data: {confirm: "Are you sure?"}, class:"glyphicon glyphicon-remove" %>
-                      </span>
-                    </span>
-                  </li>
-                  <li class="divider"></li>
-                <% end %>
-                <h6>Total price :<%= @sum %></h6>
-                <li><%= link_to "Show Cart", carts_path %></li>
-              </ul>
-            </li>
-          </ul>
+          <%= render 'pages/user' %>
         <% end %>
       </ul>
     </div>
