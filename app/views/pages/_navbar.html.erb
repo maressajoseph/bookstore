@@ -1,5 +1,5 @@
 <!-- _navbar.html.erb -->
-
+<% @sum = 0 %>
 <!-- Static navbar -->
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
@@ -44,6 +44,7 @@
               </a>
               <ul class="dropdown-menu dropdown-cart" role="menu">
                 <% current_user.profile.cart_products.each do |product| %>
+                  <% @sum += product.price %>
                   <li>
                     <span class="item">
                       <span class="item-left">
@@ -60,7 +61,8 @@
                   </li>
                   <li class="divider"></li>
                 <% end %>
-                <li><%= link_to "Your Cart", carts_path %></li>
+                <h6>Total price :<%= @sum %></h6>
+                <li><%= link_to "Show Cart", carts_path %></li>
               </ul>
             </li>
           </ul>
