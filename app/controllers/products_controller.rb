@@ -3,7 +3,11 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.search(params[:search]).order("created_at DESC")
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @products = Product.all.order_by(params[:sort_by])
+    end
   end
 
   def show
