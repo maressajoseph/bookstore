@@ -1,18 +1,4 @@
 <div class="container-fluid">
-  <div class="container">
-  <nav class="pull-right">
-  <% if user_signed_in? %>
-    <div class="row little-shopping-cart">
-      <div class="col-xs-1">
-        <p><%= current_user.profile.cart_products.count %></p>
-      </div>
-      <div class="col-xs-1">
-        <%= link_to image_tag("http://res.cloudinary.com/maressajoseph/image/upload/v1496153955/2772_lliscg.svg", class: "cart-item"), carts_path %>
-      </div>
-    </div>
-  <% end %>
-  </nav>
-</div>
   <h1 class="text-center">All Books</h1>
 </div>
 <br><br>

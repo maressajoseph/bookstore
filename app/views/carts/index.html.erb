@@ -1,3 +1,4 @@
+<% @sum = 0 %>
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -23,7 +24,7 @@
         </div>
         <ol>
           <% @cart.each do |product| %>
-            <% @sum =+ product.price %>
+            <% @sum += product.price %>
                 <div class="row">
                   <li>
                   <div class="col-md-1">
