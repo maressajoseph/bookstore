@@ -2,7 +2,7 @@
   <div class="container">
   <nav class="pull-right">
   <% if user_signed_in? %>
-    <div class="row">
+    <div class="row little-shopping-cart">
       <div class="col-xs-1">
         <p><%= current_user.profile.cart_products.count %></p>
       </div>
@@ -35,19 +35,20 @@
     <div class="col-xs-4">
       <%= form_tag(products_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Products", style: ("width:270px") %>
-      <%= submit_tag "Search" %>
+      <%= submit_tag "Search", class: "btn btn-default" %>
       <% end %>
     </div>
   </div>
-  <br><br>
+  <br><br><hr><br>
   <div class="row">
     <% @products.each do |product| %>
-      <div class="col-md-3">
+      <div class="col-md-4 text-center">
         <%= image_tag product.image, :class => "img-thumbnail" %>
-        <h5 class="text-center"><%= link_to product.title, product %></h5>
-        <h5 class="text-center">price: $<%= product.price %></h5>
+        <h4 class="text-center"><%= link_to product.title, product %></h4>
+        <h5 class="text-center">Price: $<%= product.price %></h5>
         <% if user_signed_in? %>
           <h4 class="text-center"><%= link_to "", new_product_cart_path(product), class:"glyphicon glyphicon-shopping-cart"%></h4>
+          <br><br>
         <% end %>
       </div>
       <% end %>

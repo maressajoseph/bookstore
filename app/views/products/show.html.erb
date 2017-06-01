@@ -1,18 +1,37 @@
 <div class = "container-fluid"><br>
+  <nav class="pull-right">
+  <% if user_signed_in? %>
+    <div class="row little-shopping-cart">
+      <div class="col-xs-1">
+        <p><%= current_user.profile.cart_products.count %></p>
+      </div>
+      <div class="col-xs-1">
+        <%= link_to image_tag("http://res.cloudinary.com/maressajoseph/image/upload/v1496153955/2772_lliscg.svg", class: "cart-item"), carts_path %>
+      </div>
+    </div>
+  <% end %>
+</nav><br>
   <h2 class="text-center"><%= @product.title %> - by <%= @product.author %></h2>
 </div>
+<br><br><br>
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 text-right">
+    <div class="col-xs-5 text-right">
       <%= image_tag @product.image, class: "img-thumbnail" %>
     </div>
     <div class="col-xs-6">
       <h3>Book details</h3>
-      <h4>Title: <%= @product.title %></h4>
-      <h4>Author: <%= @product.author %></h4>
-      <h4>Price: €<%= @product.price %></h4>
-      <h4>Description: <%= @product.description %></h4>
+      <hr>
+      <h5>Title:  <%= @product.title %></h5>
+      <h5>Author: <%= @product.author %></h5>
+      <h5>Price: €<%= @product.price %></h5>
+      <h5>Description: <%= @product.description %></h5>
+      <br>
+      <% if user_signed_in? %>
+        <h5><%= link_to "", new_product_cart_path(@product.id), class:"glyphicon glyphicon-shopping-cart"%> Add this book to your shopping cart </h5>
+      <% end %>
     </div>
   </div>
-  <%= link_to "Back", products_path, class: "btn btn-default" %>
+  <br><br>
+  <nav class="text-center"><%= link_to "Go back to all products", products_path, class: "btn btn-default" %></nav>
 </div>

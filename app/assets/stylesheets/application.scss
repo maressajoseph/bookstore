@@ -6,8 +6,22 @@ body{
 	font-size: 15px;
 }
 .img-thumbnail {
-  height: 400px;
-  width: 300px;
+  height: 300px;
+  width: 200px;
+}
+
+.little-shopping-cart {
+	border: 1px solid lightgrey;
+	padding-top: 6px;
+	border-radius: 10%;
+}
+
+h3 {
+	color: rgb(255,87,45);
+}
+
+h5 {
+	font-size: 16px;
 }
 
 
@@ -15,6 +29,29 @@ body{
 	font-family: 'Montserrat Subrayada', sans-serif;
 	color: rgb(255,87,45);
 	font-size: 80px;
+}
+
+.navbar-brand {
+	font-family: 'Montserrat Subrayada', sans-serif;
+	font-size: 22px;
+}
+
+.navbar-default .navbar-brand {
+	color: rgb(255,87,45);
+}
+
+.navbar-default .navbar-brand:hover {
+	color: rgb(255,87,45);
+}
+
+h4 a {
+	color: black;
+	text-decoration: none;
+	font-size: 16px;
+}
+
+h4 a:hover {
+	color: rgb(255,87,45);
 }
 
 #latestbooks {
@@ -32,7 +69,7 @@ footer {
 }
 
 .btn:hover{
-	background-color: #E8AA8C;
+	background-color: rgba(254,255,193,0.4);
 }
 
 .main-btn{
@@ -46,7 +83,7 @@ footer {
 	width: 40rem;
 	margin-top: 2rem;
 	background-color: white;
-	color:#5E616A;
+	background-color: rgba(254,255,193,0.4);
 	font-weight: 600;
 	text-shadow: .2px 0  0.1px #5E616A;
 }
