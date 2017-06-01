@@ -19,6 +19,7 @@ before_action :authenticate_user!
     @cart = current_user.profile.cart_products
   end
 
+  
   private
 
   def set_product_id
