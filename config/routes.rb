@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :carts, only: [:index, :destroy]
+
   root to: 'pages#index'
 
   get "about" => 'pages#about'

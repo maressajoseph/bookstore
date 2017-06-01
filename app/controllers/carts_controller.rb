@@ -20,9 +20,6 @@ before_action :authenticate_user!
   end
 
 
-
-
-
   private
 
   def set_product_id
