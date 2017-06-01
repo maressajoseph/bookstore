@@ -5,9 +5,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.order_by(params[:sort_by])
     @cart = current_user.profile.cart_products
-    if params[:search]
-      @products = Product.search(params[:search]).order("created_at DESC")
-    end
+    @products = Product.search(params[:search]).order("created_at DESC")
   end
 
   def show

@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 body{
-	font-family: 'Playfair Display', serif;
+	font-family: 'Raleway', serif;
 	font-size: 15px;
 }
 .img-thumbnail {
@@ -10,50 +10,25 @@ body{
   width: 300px;
 }
 
-.jumbotron{
-	background-color: #E8AA8C;
-}
-
-.jumbotron .container {
-	display: flex;
-}
-
-.container{
-	align-items: center;
-	flex-direction: column;
-}
-
-.main-container{
-	margin-bottom: 20rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: column;
-}
 
 .header-txt{
 	font-family: 'Montserrat Subrayada', sans-serif;
+	color: rgb(255,87,45);
+	font-size: 80px;
 }
 
-.navbar-default{
-	background-color: rgba(226, 220, 213, .5);
+#latestbooks {
+	font-size: 20px;
 }
 
 footer {
-	height: 1rem;
-	margin-top: 1rem;
-	align-content: center;
-	bottom: 0;
+	font-size: 14px;
 }
 
-.img-thumbnail{
-	filter:brightness(110%);
-}
 
 .img-thumbnail:hover{
 	transform: scale(1.01, 1.01);
 	animation-duration: .7s;
-	filter:brightness(100%)
 }
 
 .btn:hover{
@@ -62,24 +37,21 @@ footer {
 
 .main-btn{
 	width: 40rem;
-	margin: 6rem;	
-	background-color: #E8AA8C;
-	color:white;
-	font-weight: 600;
-	text-shadow: 1px 0  0.1px #5E616A;
+	margin-top: 2rem;
+	color: grey;
+	font-size: 20px;
 }
 
 .main-btn:hover{
 	width: 40rem;
-	margin: 6rem;	
+	margin-top: 2rem;
 	background-color: white;
 	color:#5E616A;
 	font-weight: 600;
-	text-shadow: .5px 0  0.1px #5E616A;
+	text-shadow: .2px 0  0.1px #5E616A;
 }
 
 .cart-item {
   height: 25px;
   width: 25px;
 }
-
