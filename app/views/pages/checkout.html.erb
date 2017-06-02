@@ -49,16 +49,16 @@
         </ol>
         <hr>
         <p class="col-xs-2">Total price: €<%= @sum %></p>
-      <% else %>
-        <p>Your cart is still empty</p>
-      <% end %>
+        <% else %>
+        <% end %>
+        </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Please check or update your shipping details below</h4>
       </div>
+      <div class='panel-body'>
+        <%= render 'form' %>
+      </div>
+    </div>
   </div>
-  <%= link_to "Go back to all products", products_path, class: "btn btn-default" %>
-
-  <% if @cart.any? %>
-      <%= link_to "Proceed to checkout", checkout_path, class: "btn btn-default" %>
-  <% else %>
-  <% end %>
-
-</div>
