@@ -9,4 +9,9 @@ class PagesController < ApplicationController
   def show
   end
 
+  def checkout
+    @cart = current_user.profile.cart_products
+    @profile = current_user.profile
+  end
+
 end
