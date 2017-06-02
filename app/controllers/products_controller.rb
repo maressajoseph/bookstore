@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def index
     if params[:search]
+      puts "params #{params.inspect}"
       @products = Product.search(params[:search]).order("created_at DESC")
     else
       @products = Product.all.order_by(params[:sort_by])
