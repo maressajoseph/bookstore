@@ -33,7 +33,7 @@
         <h4 class="text-center"><%= link_to product.title, product %></h4>
         <h5 class="text-center">Price: €<%= product.price %></h5>
         <% if user_signed_in? && current_user.has_profile? %>
-          <h4 class="text-center"><%= link_to "", new_product_cart_path(product), class:"glyphicon glyphicon-shopping-cart"%></h4>
+          <h4 class="text-center"><%= link_to "", new_product_cart_path(product), class:"glyphicon glyphicon-shopping-cart add-to-cart"%></h4>
         <% end %><br><br>
       </div>
       <% end %>

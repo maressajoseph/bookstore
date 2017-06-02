@@ -39,6 +39,13 @@ h5 {
 	margin: 40px;
 }
 
+.highlight {
+	background-color: rgba(255, 130, 130, 0.6);
+	padding: 1px;
+	.glyphicon {
+		top: 3px;
+	}
+
 .header-txt{
 	font-family: 'Montserrat Subrayada', sans-serif;
 	color: rgb(255,87,45);
